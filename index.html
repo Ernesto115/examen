@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Oportunidad1 Tema 1</title>
+</head>
+<body>
+
+    <header> EXAMEN PRACTICO UNIDAD 1 PROGRAMACION WEB </header>
+
+    <menu>
+        <div>
+            <li><a href="#" onclick="ver('imagenes.html')">Imagenes</a></li>
+
+        </div>
+        <div>
+            <li><a href="#" onclick="ver('multimedia.php')">Multimedia</a></li>
+
+        </div>
+        <div>
+            <li><a href="#" onclick="ver('temario/Temario.pdf')">Temario</a></li>
+
+        </div>
+    </menu>
+    
+    <div>
+        <iframe src="/texto.html" frameborder="0" name="contenedor" style="width: 400px; height: 600px;"></iframe>
+    </div>
+
+    <div id="extraIframes"></div>
+
+    
+    <script>
+        function ver(url){
+        let div1 = document.querySelector("#extraIframes");
+        fetch(url)
+        .then(response => response.text())
+        .then(data => {
+        let nuevoIframe = document.createElement("iframe");
+        nuevoIframe.src = url;
+        div1.appendChild(nuevoIframe);
+    });
+}
+    </script>
+
+
+    <footer>Ernesto Marquez De los Reyes</footer>
+
+</body>
+</html>
